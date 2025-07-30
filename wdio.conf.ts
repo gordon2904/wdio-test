@@ -56,7 +56,7 @@ export const config: WebdriverIO.Config = {
             // capabilities for local browser web tests
             browserName: 'chrome',
             'goog:chromeOptions': {
-                args: ['--disable-gpu', '--window-size=1920,1080'] // Removed '--headless' to make the browser visible
+                args: ['--window-size=1920,1080'] // Removed '--headless' to make the browser visible
             }
         }
     ],
@@ -120,6 +120,7 @@ export const config: WebdriverIO.Config = {
 
     cucumberOpts: {
         require: ['./test/step-definitions/**/*.steps.ts'], // Include only step definition files
+        spec: ['./test/features/**/*.feature'], // Path to feature files
         backtrace: false, // Show full backtrace for errors
         requireModule: [], // Add additional modules for step definitions
         dryRun: false, // Skip step definitions execution
